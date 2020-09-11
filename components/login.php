@@ -55,6 +55,14 @@
             <div class="card-body">
                 <img src="Deltafiber.png" alt="" class="img-fluid">
             </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+            <div class="card-body">
+                <img src="Netflix.png" alt="" class="img-fluid">
+            </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+            <div class="card-body">
+                <img src="CitiznM.png" alt="" class="img-fluid">
+            </div>
         </div>
     </div>
 </div>
