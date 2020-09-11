@@ -19,9 +19,9 @@ if (isset($_SESSION['rol'])) {
     <!-- Layout -->
     <?php require 'components/navigation.php';
     // Serve Content
-    if (isset($_SESSION['login'])) { // If user hasn't logged
+    if (!isset($_SESSION['login'])) { // If user hasn't logged
         require 'components/login.php';
-    } else if (!isset($_SESSION['login'])) { // If user has logged in
+    } else if (isset($_SESSION['login'])) { // If user has logged in
         if ($rol == "student") { // If user is student
             require 'components/dashboard_student.php';
         } else if ($rol == "leraar") { // If user is teacher
