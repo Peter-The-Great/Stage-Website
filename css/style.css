@@ -1,1 +1,7 @@
 /* Custom additions to bootstap */
+.login-box {
+    background-color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 50%;
+}
