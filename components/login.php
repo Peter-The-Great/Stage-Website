@@ -12,6 +12,11 @@
                     <label for="password">Wachtwoord</label>
                     <input type="password" placeholder="*****" class="form-control" id="password" name="password">
                 </div>
+                <?php
+                if (isset($_GET['message'])) {
+                    echo "<span style='color: #e81e1e;'>" . $_GET['message'] . "</span><br>";
+                }
+                ?>
                 <button type="submit" class="btn btn-danger">Inloggen</button>
             </form>
         </div>
