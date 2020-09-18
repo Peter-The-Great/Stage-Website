@@ -72,7 +72,7 @@ if ($_SESSION['rol'] == "leraar" || !isset($_SESSION['rol'])) {
         </div>
     </div>
     <?php
-    require_once "components/scripts.php";
+    require "components/scripts.php";
     ?>
     
 </body>
