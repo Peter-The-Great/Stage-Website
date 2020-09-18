@@ -1,7 +1,12 @@
 /* Custom additions to bootstap */
 .login-box {
-    background-color: white;
     padding-left: 50px;
     padding-right: 50px;
     width: 50%;
+    border-radius: 10px;
 }
+.stickyfooter{
+    position: absolute;
+    bottom: 0;
+}
+
