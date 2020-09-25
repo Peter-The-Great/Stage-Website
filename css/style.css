@@ -9,7 +9,7 @@
     position: absolute;
     bottom: 0;
 }
-
+/* deze code hier beneden is voor pjotr om een fade in fade out te maken. */
 #fader{
     position: fixed;
     top: 0;
