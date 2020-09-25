@@ -16,10 +16,6 @@
     $contactpersoon = $_POST['contactpersoon'];
     $contractdatum = $_POST['contractdatum'];
 
-
-    
-     
-
     $query = "INSERT INTO `stages` (`id`, `userid`, `bedrijfsnaam`, `plaats`, `websitelink`, `contactpersoon`, `contractdatum`)
     VALUES ('NULL', '$username', '$bedrijfsnaam', '$plaats', '$websitelink', '$contactpersoon', '$contractdatum')";
 

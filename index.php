@@ -23,10 +23,9 @@ if (isset($_SESSION['rol'])) {
     if (!isset($_SESSION['login'])) { // If user hasn't logged
         require 'components/login.php';
     }
-    include 'components/footer.php' ?>
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/popper.min.js"></script>
+    include 'components/footer.php'; 
+    require "components/scripts.php";
+    ?>
     
 </body>
 

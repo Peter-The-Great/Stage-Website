@@ -21,12 +21,12 @@ if ($_SESSION['rol'] == "leraar" || !isset($_SESSION['rol'])) {
             <div class="card card-body text-center mt-3">
                 <h4>Welkom op GLR Stages</h4>
                 <p class="p-0 m-0"><?php
-                    if (isset($stage)) {
-                         echo "Je hebt op dit moment een stage bij <b>" . $stage . "</b>.";
-                    } else {
-                        echo "Het lijkt erop dat je momenteel nog geen stage hebt toegevoegd.<br><button type='button' data-toggle='modal' data-target='#exampleModal' class='btn btn-success'>Stage Inschrijven</button>";
-                    }
-                ?></p>
+                                    if (isset($stage)) {
+                                        echo "Je hebt op dit moment een stage bij <b>" . $stage . "</b>.<br><div class='text-center px-3'><button class='btn-success'>Bekijk Stage</button><button class='btn-danger'>Verwijder Stage</button></div>";
+                                    } else {
+                                        echo "Het lijkt erop dat je momenteel nog geen stage hebt toegevoegd.<br><button type='button' data-toggle='modal' data-target='#exampleModal' class='btn btn-success'>Stage Inschrijven</button>";
+                                    }
+                                    ?></p>
             </div>
         </div>
     </div>
@@ -41,40 +41,40 @@ if ($_SESSION['rol'] == "leraar" || !isset($_SESSION['rol'])) {
                     </button>
                 </div>
                 <form method='post' action='php/stage_aanmaken.php'>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Bedrijfsnaam</label>
-                        <input class="form-control" type='text' name='bedrijfsnaam' minlength='3' maxlength='50' required>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Bedrijfsnaam</label>
+                            <input class="form-control" type='text' name='bedrijfsnaam' minlength='3' maxlength='50' required>
+                        </div>
+                        <div class="form-group">
+                            <label>Bedrijfsplaats</label>
+                            <input class="form-control" type='text' name='plaats' required>
+                        </div>
+                        <div class="form-group">
+                            <label>Link naar website</label>
+                            <input class="form-control" type='text' name='websitelink' minlength='10' maxlength='255' required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contactpersoon</label>
+                            <input class="form-control" type='text' name='contactpersoon' minlength='3' maxlength='50' required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contractdatum</label>
+                            <input class="form-control" type='date' name='contractdatum' max='8' value='DD-MM-YYYY' required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Bedrijfsplaats</label>
-                        <input class="form-control" type='text' name='plaats' required>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Annuleren</button>
+                        <button type="submit" class="btn btn-success">Inschrijven</button>
                     </div>
-                    <div class="form-group">
-                        <label>Link naar website</label>
-                        <input class="form-control" type='text' name='websitelink' minlength='10' maxlength='255' required>
-                    </div>
-                    <div class="form-group">
-                        <label>Contactpersoon</label>
-                        <input class="form-control" type='text' name='contactpersoon' minlength='3' maxlength='50' required>
-                    </div>
-                    <div class="form-group">
-                        <label>Contractdatum</label>
-                        <input class="form-control" type='date' name='contractdatum' max='8' value='DD-MM-YYYY' required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Annuleren</button>
-                    <button type="submit" class="btn btn-success">Inschrijven</button>
-                </div>
                 </form>
             </div>
         </div>
     </div>
     <?php
-    require_once "components/scripts.php";
+    require "components/scripts.php";
     ?>
-    
+
 </body>
 
 </html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="contacttest.css" type="text/css" rel="stylesheet">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+  
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: blue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+</style>
+</head>
+<body>
+<fieldset>
+
+<h3>Evaluatie</h3>
+
+<div class="container">
+  <form action="/action_page.php">
+    
+    <label for="begeleiding">Cijfer voor de begeleiding</label>
+    <select id="begeleiding" name="begeleiding">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <label for="technieken">Cijfer voor geleerde technieken</label>
+    <select id="technieken" name="technieken">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <label for="bedrijf">Cijfer voor het bedrijf</label>
+    <select id="bedrijf" name="bedrijf">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <label for="Verstuur">Overige opmerkingen</label>
+    <textarea id="Verstuur" name="Verstuur" placeholder="Schrijf iets.." style="height:200px"></textarea>
+
+    <input type="submit" value="Verstuur">
+   
+
+  </form>
+</div>
+
+</body>
+</html>
