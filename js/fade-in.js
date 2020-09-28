@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (anchors[idx].hostname !== window.location.hostname) {
       continue;
     }
-//|| window.location.href.indexOf("#")
+//dit was een functie die ik wilde proberen en mislukte || window.location.href.indexOf("#")
     anchors[idx].addEventListener('click', function (event) {
       var fader = document.getElementById('fader'),
         anchor = event.currentTarget;
