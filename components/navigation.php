@@ -16,9 +16,17 @@
                 </li>
                 ";
             }
+            else if(isset($_SESSION['rol']) && $_SERVER['SCRIPT_NAME']=="/Stage-Website/php/student_inzien.php" && $_SESSION['rol'] == "leraar"){
+                echo "<li class='nav-item'>
+                <a class='nav-link' href='../dashboard_docent.php'>Home</span></a>
+                </li>
+                <li class='nav-item'>
+                <a class='nav-link' href='../logout.php'>Uitloggen</a>
+                </li>";
+            }
             else if(isset($_SESSION['rol']) && $_SESSION['rol'] == "leraar"){
                 echo "<li class='nav-item'>
-                <a class='nav-link' href='dashboard_student.php'>Home</span></a>
+                <a class='nav-link' href='dashboard_docent.php'>Home</span></a>
                 </li>
                 <li class='nav-item'>
                 <a class='nav-link' href='logout.php'>Uitloggen</a>

@@ -75,7 +75,7 @@ $stmt->close();
                             <div class="form-row">
                                 <div class="form-group col-4">
                                     <label>Begeleiding</label>
-                                    <select class="custom-select" required>
+                                    <select name="begeleidings_cijfer" class="custom-select" required>
                                         <option selected value="">1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -90,7 +90,7 @@ $stmt->close();
                                 </div>
                                 <div class="form-group col-4">
                                     <label>Technieken</label>
-                                    <select class="custom-select" required>
+                                    <select name="technieken_cijfer" class="custom-select" required>
                                         <option selected value="">1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -105,7 +105,7 @@ $stmt->close();
                                 </div>
                                 <div class="form-group col-4">
                                     <label>Algemeen</label>
-                                    <select class="custom-select" required>
+                                    <select name="algemeen_cijfer" class="custom-select" required>
                                         <option selected value="">1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -121,7 +121,7 @@ $stmt->close();
                             </div>
                             <div class="form-group">
                                 <label>Opmerking</label>
-                                <textarea class="form-control">
+                                <textarea name="overige_opmerkingen" class="form-control">
 
                                 </textarea>
                             </div>
@@ -163,7 +163,7 @@ $stmt->close();
                         </div>
                         <div class="form-group">
                             <label>Contractdatum</label>
-                            <input class="form-control" type='date' name='contractdatum' max='8' value='DD-MM-YYYY' required>
+                            <input class="form-control" type='date' name='contractdatum' max='8' placeholder='YYYY-MM-DD' required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -204,7 +204,7 @@ $stmt->close();
                         </div>
                         <div class="form-group">
                             <label>Contractdatum</label>
-                            <input class="form-control" type='date' value="<?php echo $contractdatum ?>" name='contractdatum' max='8' value='DD-MM-YYYY' required>
+                            <input class="form-control" type='date' value="<?php echo $contractdatum ?>" name='contractdatum' max='8' placeholder='YYYY-MM-DD' required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -237,9 +237,7 @@ $stmt->close();
             </div>
         </div>
     </div>
-    <?php
-    require("components/scripts.php");
-    ?>
+    <?php require("components/scripts.php");?>
 
 </body>
 

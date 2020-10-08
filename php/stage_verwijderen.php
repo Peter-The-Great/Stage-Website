@@ -4,7 +4,6 @@ require('database.php');
 if ($_SESSION['rol'] == "leraar" || !isset($_SESSION['rol'])) {
     header("location: index.php");
 }
-
 $userid = $_SESSION["userid"];
 
 if(isset($userid)){

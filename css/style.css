@@ -9,6 +9,16 @@
     position: absolute;
     bottom: 0;
 }
+
+.nourl {
+  color: black !important;
+}
+
+.nourl:hover {
+  color: black !important;
+  text-decoration: none;
+}
+
 /* deze code hier beneden is voor pjotr om een fade in fade out te maken. */
 #fader{
     position: fixed;
