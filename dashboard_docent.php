@@ -22,6 +22,7 @@ $result = $conn->query($sql);
     <div class="container mt-3">
         <div class="row">
             <?php
+            // Leerlingen lijst ophalen
             if (!$result) {
                 echo "                
                 <div class='col-7'>
@@ -75,66 +76,6 @@ $result = $conn->query($sql);
         </div>
     </div>
     <!-- Inzien Student door docent -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Student Informatie</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form>
-                    <div class="modal-body">
-                    <div class="form-group">
-                            <label>Studentnaam</label>
-                            <input class="form-control" type='text' name='studentnaam' minlength='3' maxlength='50' readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Bedrijfsnaam</label>
-                            <input class="form-control" type='text' name='bedrijfsnaam' minlength='3' maxlength='50' readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Bedrijfsplaats</label>
-                            <input class="form-control" type='text' name='bedrijfsplaats' minLength='3' maxlength='5' readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Link naar website</label>
-                            <input class="form-control" type='text' name='websitelink' minlength='10' maxlength='255' readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Contactpersoon</label>
-                            <input class="form-control" type='text' name='contactpersoon' minlength='3' maxlength='50' readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Contractdatum</label>
-                            <input class="form-control" type='date' name='contractdatum' max='8' placeholder='YYYY-MM-DD' readonly>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label>Begeleidingscijfer</label>
-                            <input class="form-control" type='text' name='begeleidingscijfer' max='8' readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Technisch cijfer</label>
-                            <input class="form-control" type='text' name='Technischcijfer' max='8' readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Stagecijfer</label>
-                            <input class="form-control" type='text' name='Stagecijfer' max='8' readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Opmerking</label>
-                            <input class="form-control" type='date' name='opmerking' max='8' readonly>
-                        </div>                        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
     <?php require("components/scripts.php");?>
 
 </body>
