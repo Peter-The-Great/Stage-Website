@@ -1,47 +1,56 @@
 <?php
 session_start();
-require('database.php');
+require 'database.php';
 
-if (empty($_POST['begeleiding'])) {
-    header('location: ../dashboard_student.php?error=Velden waren niet correct.');
-    return false;
-}
 
-if (empty($_POST['technieken'])) {
-    header("location: ../dashboard_student.php?error=Velden waren niet correct.");
-    return false;
-}
+$begeleiding = $_POST['begeleiding'];
+$technieken = $_POST['technieken'];
+$algemeen = $_POST['algemeen'];
+$opmerkingen = $_POST['opmerking'];
 
-if (empty($_POST['algemeen'])) {
-    header("location: ../dashboard_student.php?error=Velden waren niet correct.");
+if (empty($begeleiding)) {
+    header('location: ../dashboard_student.php?error=Begeleiding Velden waren niet correct.');
     return false;
 }
 
-if (empty($_POST['opmerking'])) {
-    header("location: ../dashboard_student.php?error=Velden waren niet correct.");
+if (empty($technieken)) {
+    header("location: ../dashboard_student.php?error=Technieken Velden waren niet correct.");
     return false;
 }
 
-if(strlen($_POST['opmerking']) < 1 || strlen($_POST['opmerking']) > 10){ 
-    header('location: ../dashboard_student.php?error=Stringfout.');
-    return false;
-}
-if(strlen($_POST['begeleiding']) < 1 || strlen($_POST['begeleiding'])  > 10){
-    header('location: ../dashboard_student.php?error=Stringfout.');
-    return false;
-}
-if(strlen($_POST['technieken']) > 10 || strlen($_POST['technieken']) < 1){
-    header('location: ../dashboard_student.php?error=Stringfout.');
-    return false;
-}
-if(strlen($_POST['algemeen']) > 10 || strlen($_POST['algemeen']) < 1){
-    header('location: ../dashboard_student.php?error=Stringfout.');
+if (empty($algemeen)) {
+    header("location: ../dashboard_student.php?error=Algemeen Velden waren niet correct.");
     return false;
 }
 
-$stmt = $conn->prepare("INSERT INTO `beoordeling` (`Cijfer_Begeleiding`, 'userid', `Cijfer_Geleerde_Technieken`, `Cijfer_Bedrijf_Algemeen`, `Overige_Opmerkingen`) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("iiiis", $_POST['begeleiding'], $_SESSION['userid'], $_POST['technieken'], $_POST['algemeen'], $_POST['opmerking']);
-$stmt->execute();
-$stmt->close();
+if (empty($opmerkingen)) {
+    header("location: ../dashboard_student.php?error=Opmerking Velden waren niet correct.");
+    return false;
+}
 
-header('location: location: ../dashboard_student.php');
+if(strlen($begeleiding) < 1 || strlen($begeleiding)  > 10){
+    header('location: ../dashboard_student.php?error=Begeleiding Stringfout.');
+    return false;
+}
+if(strlen($technieken) > 10 || strlen($technieken) < 1){
+    header('location: ../dashboard_student.php?error=Technieken Stringfout.');
+    return false;
+}
+if(strlen($algemeen) > 10 || strlen($algemeen) < 1){
+    header('location: ../dashboard_student.php?error=Algemeen Stringfout.');
+    return false;
+}
+
+// $stmt = $conn->prepare("INSERT INTO beoordeling(Stage_ID, userid, Cijfer_Begeleiding, Cijfer_Geleerde_Technieken, Cijfer_Bedrijf_Algemeen, Overige_Opmerkingen) VALUES (NULL, $session, $begeleiding, $technieken, $algemeen, $opmerkingen);");
+// $stmt->execute();
+// $stmt->close();
+
+
+$session = $_SESSION['userid'];
+
+$sql = "INSERT INTO beoordeling (stage_id, userid, begeleiding, technieken, algemeen, opmerking)
+VALUES (NULL, '$session', '$begeleiding', '$technieken', '$algemeen', '$opmerkingen')";
+$conn->query($sql);
+header('location: ../dashboard_student.php'); 
+
+?>

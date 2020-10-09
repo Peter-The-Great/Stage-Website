@@ -9,6 +9,14 @@ $stmt->execute();
 $stmt->bind_result($stage, $plaats, $weblink, $contactpersoon, $contractdatum);
 $stmt->fetch();
 $stmt->close();
+
+$session = $_SESSION['userid'];
+$stmt2 = $conn->prepare("SELECT algemeen FROM beoordeling WHERE userid = ?");
+$stmt2->bind_param("i", $session);
+$stmt2->execute();
+$stmt2->bind_result($beoordeeld);
+$stmt2->fetch();
+$stmt2->close();
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -70,66 +78,73 @@ $stmt->close();
                 </div>
                 <div class="col-sm-6">
                     <div class="card card-body mt-3 h-100">
-                        <form>
+                        <?php if (empty($beoordeeld)) { ?>
+                        <form action="php/stage_beoordelen.php" method="post">
                             <h3>Stage Beoordeling</h3>
                             <div class="form-row">
                                 <div class="form-group col-4">
                                     <label>Begeleiding</label>
-                                    <select name="begeleidings_cijfer" class="custom-select" required>
-                                        <option selected value="">1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
+                                    <select name="begeleiding" class="custom-select" required>
+                                        <option selected disabled>Kies</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-4">
                                     <label>Technieken</label>
-                                    <select name="technieken_cijfer" class="custom-select" required>
-                                        <option selected value="">1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
+                                    <select name="technieken" class="custom-select" required>
+                                        <option selected disabled>Kies</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-4">
                                     <label>Algemeen</label>
-                                    <select name="algemeen_cijfer" class="custom-select" required>
-                                        <option selected value="">1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
+                                    <select name="algemeen" class="custom-select" required>
+                                        <option selected disabled>Kies</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Opmerking</label>
-                                <textarea name="overige_opmerkingen" class="form-control">
-
-                                </textarea>
+                                <textarea name="opmerking" required class="form-control">Enter text here...</textarea>
                             </div>
                             <input type="submit" class="btn btn-success m-0" value="Beoordeel">
                         </form>
+                        <?php } else {
+                            echo "Je hebt je stage al beoordeeld het is niet mogenlijk om dit te wijzigen of nog een keer in te vullen.";
+                        }
+                            ?>
                     </div>
                 </div>
-            <?php } ?>
+            <?php
+            } ?>
         </div>
     </div>
     <?php include('components/footer.php'); ?>
