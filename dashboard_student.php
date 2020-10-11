@@ -96,10 +96,22 @@ $stmt2->close();
                                         <option value="8">8</option>
                                         <option value="9">9</option>
                                         <option value="10">10</option>
+                                    <select name="begeleidings_cijfer" class="custom-select" required>
+                                        <option selected value="">1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-4">
                                     <label>Technieken</label>
+
                                     <select name="technieken" class="custom-select" required>
                                         <option selected disabled>Kies</option>
                                         <option value="1">1</option>
@@ -112,6 +124,17 @@ $stmt2->close();
                                         <option value="8">8</option>
                                         <option value="9">9</option>
                                         <option value="10">10</option>
+                                    <select name="technieken_cijfer" class="custom-select" required>
+                                        <option selected value="">1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-4">
@@ -128,12 +151,26 @@ $stmt2->close();
                                         <option value="8">8</option>
                                         <option value="9">9</option>
                                         <option value="10">10</option>
+                                    <select name="algemeen_cijfer" class="custom-select" required>
+                                        <option selected value="">1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Opmerking</label>
                                 <textarea name="opmerking" required class="form-control">Enter text here...</textarea>
+                                <textarea name="overige_opmerkingen" class="form-control">
+
+                                </textarea>
                             </div>
                             <input type="submit" class="btn btn-success m-0" value="Beoordeel">
                         </form>
