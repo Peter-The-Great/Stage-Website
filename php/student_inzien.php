@@ -70,6 +70,7 @@ $done = $conn->query($sli);
 
 <body>
     <?php require('../components/navigation.php'); ?>
+    <!-- Docent - Student en beoordeling inzien -->
     <div class="container">
         <div class="row">
             <div class="card card-body mt-3">

@@ -31,6 +31,7 @@ $stmt2->close();
 
 <body>
     <?php require('components/navigation.php'); ?>
+    <!-- Stage aanmaken / verwijderen / weizgen -->
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -51,6 +52,7 @@ $stmt2->close();
             </div>
         </div>
         <div class="row">
+            <!-- Stage Informatie -->
             <?php if (isset($stage)) { ?>
                 <div class="col-sm-6">
                     <div class="card card-body mt-3 h-100">
@@ -76,6 +78,7 @@ $stmt2->close();
                         <a target="_blank" href="<?php echo $weblink ?>"><button style='margin-top: 1em;' class="btn btn-success">Bekijk Website</button></a>
                     </div>
                 </div>
+                <!-- Stage Beoordelen -->
                 <div class="col-sm-6">
                     <div class="card card-body mt-3 h-100">
                         <?php if (empty($beoordeeld)) { ?>
